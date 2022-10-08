@@ -74,6 +74,20 @@
         </v-menu>
       </div>
     </v-app-bar>
+    <v-content>
+      <v-container>
+        <v-row class="mb-4">
+          <v-col sm="6" md="4" lg="3" v-for="(item, index) in 200" :key="index">
+            <v-card>
+              <v-img
+                height="200px"
+                :src="`https://picsum.photos/500/300?image=${index + 1}`"
+              />
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-content>
   </v-app>
 </template>
 
