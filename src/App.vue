@@ -82,7 +82,13 @@
               <v-img
                 height="200px"
                 :src="`https://picsum.photos/500/300?image=${index + 1}`"
+                :lazy-src="`https://picsum.photos/500/300?image=${index + 1}`"
               />
+              <v-card-substile class=""> Number {{ item }} </v-card-substile>
+              <v-card-text class="text--primary"
+                ><div>Header field</div>
+                <div>Header Content</div></v-card-text
+              >
             </v-card>
           </v-col>
         </v-row>
