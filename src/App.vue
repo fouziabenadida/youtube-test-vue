@@ -1,7 +1,25 @@
 <template>
   <v-app>
+    <v-navigation-drawer v-model="drawer" app clipped flating temporary>
+      <v-list dense>
+        <v-row class="ma-2 mb-3">
+          <v-icon class="mx-4" large> mdi-video </v-icon>
+          <v-toolbar-title>
+            <span class="title">VideoVue</span>
+          </v-toolbar-title>
+        </v-row>
+        <v-list-item v-for="(item, index) in items" :key="index" link>
+          <v-list-item-actions>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-actions>
+          <v-list-item-content>
+            <v-list-title class="pl-6">{{ item.text }}</v-list-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
     <v-app-bar app clipped-left>
-      <v-app-bar-nav-icon />
+      <v-app-bar-nav-icon @click="drawer = !drawer" />
       <v-icon class="mx-4" large> mdi-video </v-icon>
       <v-toolbar-title>
         <span class="title">VideoVue</span>
@@ -106,6 +124,14 @@ export default {
   name: "App",
 
   data: () => ({
+    items: [
+      { icon: "mdi-trending-up", text: "Popular content" },
+      { icon: "mdi-youtube-subscription", text: "Follow" },
+      { icon: "mdi-history", text: "Past" },
+      { icon: "mdi-playlist-play", text: "Popular content" },
+      { icon: "mdi-clock", text: "Popular content" },
+    ],
+    drawer: false,
     menu: false,
     theme: false,
   }),
