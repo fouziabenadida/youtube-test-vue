@@ -89,6 +89,10 @@
                 ><div>Header field</div>
                 <div>Header Content</div></v-card-text
               >
+              <v-card-actions>
+                <v-btn color="orange" text> Save </v-btn>
+                <v-btn color="orange" text> Share </v-btn>
+              </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
