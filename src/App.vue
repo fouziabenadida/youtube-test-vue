@@ -109,5 +109,10 @@ export default {
     menu: false,
     theme: false,
   }),
+  watch: {
+    theme: function (next) {
+      this.$vuetify.theme.dark = next;
+    },
+  },
 };
 </script>
